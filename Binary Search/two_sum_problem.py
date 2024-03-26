@@ -8,32 +8,11 @@
 
 # Your solution must use only constant extra space.
 
+# we can use two pointer technique
 def fun1(numbers,target):
     left=0
     right=len(numbers)-1 #IMP to do -1 to avoid index out of bounds
-    final_index = -1
     
-    if target < 0:
-        temp_target = 0
-    else:
-        temp_target=target
-
-    while left <=right:
-        mid = (left+right)//2
-        if(numbers[mid] < temp_target):
-            left=mid+1
-        elif(numbers[mid]>temp_target):
-            right=mid-1
-        else:
-            final_index=mid
-            break
-
-    if final_index == -1:
-        final_index=right
-
-    print("Index is ",final_index)
-    left=0
-    right=final_index
     while left<right:
         sum_num=numbers[left]+numbers[right]
         if sum_num < target:
@@ -41,8 +20,8 @@ def fun1(numbers,target):
         elif sum_num > target:
             right -=1
         else:
-            return [left,right]
-    return [None,None]
-    
+            return [left+1,right+1]
 
-print(fun1([-20,-13,-4,-2,-1],-15))
+
+
+
