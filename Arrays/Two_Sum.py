@@ -19,33 +19,29 @@ one by one as we encounter next value starting from the beginning we look for it
 if present we simply return the index of two values that made up to certain sum.
 if not present then we store the index element values as key and its index value as a value to that key in hashmap
 
-
 '''
-
 
 def twoSum(nums, target):
     """
+    Finds two numbers in the array that sum up to the target.
+
     :type nums: List[int]
     :type target: int
     :rtype: List[int]
     """
-    my_map = {}
+    my_map = {}  # Initialize a hashmap to store encountered values and their indices
     
     for i in range(len(nums)):
-        curr_looking_for_val = target-nums[i]
+        curr_looking_for_val = target - nums[i]  # Calculate the complement value
         
         if curr_looking_for_val in my_map:
-            return [my_map[curr_looking_for_val],i]
+            # If complement exists in the hashmap, return the indices
+            return [my_map[curr_looking_for_val], i]
             
-        my_map[nums[i]]=i
+        my_map[nums[i]] = i  # Add the current element to the hashmap
     
-    return -1
-        
-    
-    
-    
+    return -1  # If no such pair found, return -1
         
         
-
 
 
