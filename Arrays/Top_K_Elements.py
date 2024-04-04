@@ -42,14 +42,12 @@ def topKFrequent(nums, k):
 
     
 
-num_arr = [1,2]
-k = 2
+# num_arr = [1,2]
+# k = 2
 
-print(topKFrequent(num_arr,k))
+# print(topKFrequent(num_arr,k))
 #efficient solution 
 
-
-    
 
 
 
